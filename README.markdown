@@ -1,6 +1,6 @@
 # 🪶 NestShift: Riders Guild/SoDOff Export Tool
 
-NestShift is a secure and user-friendly tool designed for Riders Guild users to export their profile data as a **signed ZIP archive**, verifiable with GPG. Built with Flask and packaged with a seamless Docker setup, it ensures simplicity, security, and authenticity for data exports.
+NestShift is a secure and user-friendly tool designed for Riders Guild/SoDOff users to export their profile data as a **signed ZIP archive**, verifiable with GPG. Built with Flask and packaged with a seamless Docker setup, it ensures simplicity, security, and authenticity for data exports.
 
 ## ✨ Features
 
