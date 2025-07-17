@@ -22,7 +22,7 @@ Then start SoDOff.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/furynightwing/SoDNestShift.git
+git clone https://github.com/thestinkyferret/SoDNestShift.git
 cd nestshift
 ```
 
