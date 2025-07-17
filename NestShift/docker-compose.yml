@@ -1,19 +1,14 @@
 version: '3.8'
 
 services:
-  app:
+  flask_exporter:
     build: .
-    container_name: flask_app
     ports:
       - "21121:21121"
     env_file:
       - .env
     volumes:
-      - .:/app  # Maps the current directory to the /app directory in the container
-    restart: always  # Restarts the container automatically if it stops
-    networks:
-      - flask_network
-
-networks:
-  flask_network:
-    driver: bridge
+      # Mount private and public keys (adjust paths as needed)
+      - ./private-key.asc:/app/private-key.asc:ro
+      - ./ridersguild.asc:/app/ridersguild.asc:ro
+    restart: unless-stopped

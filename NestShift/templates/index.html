@@ -1,14 +1,126 @@
-<!doctype html>
-<html>
-<head><title>RG Export</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riders Guild Export</title>
+  
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      background: #f2f2f2;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #202124;
+    }
+    
+    main {
+      background: #fff;
+      padding: 40px 48px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    h1 {
+      font-weight: 400;
+      font-size: 24px;
+      margin-bottom: 24px;
+      color: #202124;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    
+    label {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #3c4043;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      font-size: 16px;
+      padding: 10px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s ease;
+    }
+    
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #1a73e8;
+      outline: none;
+      box-shadow: 0 0 0 1px #1a73e8;
+    }
+    
+    input[type="submit"] {
+      background: #1a73e8;
+      color: white;
+      font-weight: 500;
+      font-size: 14px;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.25px;
+      transition: background-color 0.2s ease;
+    }
+    
+    input[type="submit"]:hover,
+    input[type="submit"]:focus {
+      background: #1669c1;
+      outline: none;
+    }
+    
+    .error-message {
+      background-color: #fce8e6;
+      color: #d93025;
+      font-size: 13px;
+      padding: 10px;
+      margin-top: 12px;
+      border-radius: 4px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
 <body>
-  <h2>Export Your Account</h2>
-  <form method="POST" action="/export">
-    <label>Username:</label><br>
-    <input type="text" name="username"><br><br>
-    <label>Email:</label><br>
-    <input type="email" name="email"><br><br>
-    <button type="submit">Download Export</button>
-  </form>
+  <main>
+    <h1>Export your Riders Guild account</h1>
+    <form method="POST" autocomplete="off" novalidate>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required autocomplete="username" placeholder="Your username" />
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="Your RGSoD password" />
+      
+      <input type="submit" value="Export my account" />
+    </form>
+
+    {% if error %}
+      <div class="error-message" role="alert" aria-live="assertive">
+        {{ error }}
+      </div>
+    {% endif %}
+  </main>
 </body>
 </html>
