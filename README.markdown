@@ -8,7 +8,6 @@ NestShift is a secure and user-friendly tool designed for Riders Guild/SoDOff us
 - 🧹 **Data Privacy**: Excludes sensitive fields like `Password`, `Sessions`, and `MMORoles`.
 - 🔏 **Tamper-Proof**: Exports are signed with a GPG key for authenticity.
 - 🔓 **Public Key Access**: Retrieve the public key via `/publickey` for verification.
-- 🖥️ **Clean UI**: Google-inspired, intuitive web interface.
 - 🐳 **Dockerized**: Easy setup with Docker Compose.
 
 
